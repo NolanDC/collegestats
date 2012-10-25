@@ -33,7 +33,7 @@ view = {
 
 lib = {
 	addCommas: function(nStr) {
-    nStr += '';
+    nStr += ''
 	  var x = nStr.split('.')
 	    , x1 = x[0]
 	    , x2 = x.length > 1 ? '.' + x[1] : ''
