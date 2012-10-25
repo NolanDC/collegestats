@@ -9,7 +9,7 @@ def create_headers row
 end
 
 
-required_existence = %w(instname city state zip enrlm enrlw tuition01_tf fee01_tf tuitionfee01_tf ugentering total_full_time_undergraduates total_full_time_graduates applcn admssn satmt25 satmt75 satvr25 satvr75)
+required_existence = %w(instname city state zip enrlm enrlw tuition01_tf tuition03_tf fee01_tf tuitionfee01_tf ugentering total_full_time_undergraduates total_full_time_graduates applcn admssn satmt25 satmt75 satvr25 satvr75)
 
 required_values = {
 	'academicyear' => '2010'
