@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>College Search</title>
+	<link rel="stylesheet/less" type="text/css" href="css/reset.less">
+	<link rel="stylesheet/less" type="text/css" href="css/global.less">
+
+	<script id="search-list-template" type="text/x-handlebars-template">
+		{{#each colleges}}
+			<div class="college" title="{{name}}" rel="{{index}}">
+				<div class="inner">
+					<div class="name">{{name}}</div>
+					<div class="location">{{location}}</div>
+				</div>
+			</div>
+		{{/each}}
+	</script>
+
+	<script id="college-statistics-template" type="text/x-handlebars-template">
+		<div class="header">
+			<div class="name">{{name}}</div>
+			<div class="location">{{city}}, {{state}}</div>
+		</div>
+
+		<div class="section">
+			<div class="subtitle"><span>General Information</span></div>
+			<div class="content">
+				<div id="general_information">
+					<div class="equation">
+						<div class="statistic">
+							<div class="value">{{addCommas applications.accepted}}</div>
+							<div class="label">Admitted</div>
+						</div>
+						<div class="operator">/</div>
+						<div class="statistic">
+							<div class="value">{{addCommas applications.applied}}</div>
+							<div class="label">Applied</div>
+						</div>
+						<div class="operator">=</div>
+						<div class="statistic">
+							<div class="value">{{acceptancePercentage applications}}%</div>
+							<div class="label">Accepted</div>
+						</div>								
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="subtitle"><span>Demographics</span></div>
+			<div class="content">
+				<div class="equation">
+					<div class="statistic">
+						<div class="value">{{addCommas student_body.undergrad}}</div>
+						<div class="label">Undergraduate</div>
+					</div>
+					<div class="operator">+</div>
+					<div class="statistic">
+						<div class="value">{{addCommas student_body.grad}}</div>
+						<div class="label">Graduate</div>
+					</div>
+					<div class="operator">=</div>
+					<div class="statistic">
+						<div class="value">{{totalStudents student_body}}</div>
+						<div class="label">Total Students</div>
+					</div>								
+				</div>
+				<div class="divider"></div>
+
+				<div id="gender_ratio">
+					<div class="bar">
+						<div class="left" style="width: {{malePercentage gender}}%">
+							<div>{{malePercentage gender}}% Male</div>
+						</div>
+						<div class="right" style="width: {{femalePercentage gender}}%">
+							<div>{{femalePercentage gender}}% Female</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="section">
+			<div class="subtitle"><span>SAT Scores</span></div>
+			<div class="content">
+				<div class="two_column">
+					{{mathDifference sats}}
+					{{readDifference sats}}					
+				</div>
+			</div>
+		</div>
+	</script>
+
+	<script type="text/javascript" src="js/lib/jquery.js"></script>
+	<script type="text/javascript" src="js/lib/handlebars.js"></script>
+	<script type="text/javascript" src="js/app/helpers.js"></script>
+	<script type="text/javascript" src="js/lib/less.js"></script>
+	<script type="text/javascript" src="js/app/app.js"></script>
+
+</head>
+
+<body>
+	<div id="main">
+			<div id="search">
+				<a href="#" id="back">back</a>
+				<input type="text" id="query" onselectstart="return false;" autocomplete="off" placeholder="start typing to search"></input>
+			</div>
+			<div id="list">
+			</div>
+
+			<div id="college">
+				
+			</div>
+
+	</div>
+
+</body>
+</html>

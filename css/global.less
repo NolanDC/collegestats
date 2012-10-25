@@ -1,0 +1,300 @@
+.box-sizing( @type : border-box ) {
+	-webkit-box-sizing: @type;
+	   -moz-box-sizing: @type;
+	        box-sizing: @type;		
+}
+
+.user-select( @type : none ) {
+	-webkit-user-select: @type;
+	-khtml-user-select: @type;
+	-moz-user-select: @type;
+	-o-user-select: @type;
+	user-select: @type;
+}
+
+.placeholder( @color : #555 ) {
+	&::-webkit-input-placeholder {
+  	color: @color;
+	}
+	&:-moz-placeholder {
+    color: @color;
+	}
+	&:-ms-input-placeholder {
+    color: @color;
+	}
+}
+
+body {
+	background: white;
+	font-family: helvetica;
+	font-weight: 100;
+}
+
+#main {
+	width: 500px;
+	margin: 0 auto;
+}
+
+#search {
+	position: relative;
+	margin: 30px 0 0 0;
+
+	#back {
+		height: 100%;
+		display: block;
+		position: absolute;
+		left: -70px;
+		padding: 0 10px;
+		line-height: 57px;
+		color: #333;
+		text-decoration: none;
+		font-size: 20px;
+		display: none;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
+	input {
+		margin: 0;
+		width: 100%;
+		padding: 10px;
+		font-size: 30px;
+		border: 1px solid #ccc;
+		.box-sizing(border-box);
+		.placeholder(#ccc);
+		color: #555;
+		font-family: helvetica;
+		font-weight: 100;
+
+		&:focus {
+			outline: none;
+			box-shadow: inset 0 0px 8px #ddd;
+		}
+	}
+}
+
+#list {
+	.college {
+		text-overflow: hidden;
+		white-space: nowrap;
+		width: 50%;
+		float: left;
+		cursor: pointer;
+
+		&:hover {
+			background: #f2f2f2;
+		}
+
+		.inner {
+			padding: 10px;
+			border-left: 6px solid transparent;
+			&:hover {
+				border-color: #999;
+			}
+		}
+		.name {
+			color: #333;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			font-weight: 500;
+		}
+		.location {
+			color: #555;
+			font-size: 14px;
+		}
+	}	
+}
+
+#college {
+	
+	.header {
+		background: #f2f2f2;
+		padding: 10px;
+		margin-bottom: 30px;
+		border-bottom: 1px solid #ccc;
+
+		.name {
+			font-size: 30px;
+			color: #333;
+			font-family: helvetica;
+			font-weight: 100;
+		}
+		.location {
+			margin-top: 5px;
+			font-size: 20px;
+			color: #777;
+			font-family: helvetica;
+			font-weight: 100;
+		}		
+	}
+	.subtitle {
+		border-top: 1px solid #ccc;
+		font-size: 20px;
+		text-transform: uppercase;
+		text-align: center;
+		margin-bottom: 10px;
+		span {
+			position: relative;
+			top: -10px;
+			background: white;
+			padding: 0 10px;
+		}
+	}
+
+	.section {
+		margin-bottom: 40px;
+		.content {
+			padding: 0 10px;
+		}
+		.divider {
+			width: 200px;
+			margin: 0 auto;
+			height: 1px;
+			border-bottom: 1px solid #ccc;
+			margin: 20px auto;
+		}
+	}
+
+	.statistic {
+		.title {
+			text-align: center;
+			margin-bottom: 10px;
+			span{
+				text-align: center;
+				background: #f2f2f2;
+				padding: 6px 6px 4px 6px;
+				display: inline-block;
+			}		
+		}
+		.value {
+			font-size: 30px;
+			text-align: center;
+			margin-bottom: 2px;
+		}
+		.label {
+			font-size: 12px;
+			color: #999;
+			text-align: center;
+			text-transform: uppercase;
+			font-weight: 500;
+		}
+	}
+	
+}
+
+#gender_ratio {
+	margin: 10px 0;
+	overflow: hidden;
+
+	.bar {
+		.left {
+			border-top: 10px solid #4E558B;
+			div {
+				float: left;
+			}
+		}
+		.right {
+			border-top: 10px solid #A34444;
+			div {
+				float: right;
+			}
+		}			
+		.right, .left {
+			float: left;
+			.box-sizing();
+			height: 100%;
+			padding: 3px;
+			div {
+				height: 100%;
+				line-height: 20px;
+				color: #333;
+			}
+		}
+	}
+}
+
+
+#sat_scores {
+	width: 100%;
+
+	th {
+		padding: 10px;
+		color: #333;
+		border-bottom: 1px solid #ccc;
+		&.label {
+			text-align: left;
+		}
+	}
+	td {
+		padding: 10px;
+		text-align: center;
+		&.label {
+			text-align: left;
+		}
+		.positive, .negative {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			color: white;
+			margin-right: 4px;
+			border-radius: 2px;
+			font-family: arial;
+		}
+		.positive {
+			background: #4A9155;
+		}
+		.negative {
+			background: #A34444;
+			line-height: 14px;
+			position: relative;
+			top: -1px;
+		}
+	}
+	td:last-child, th:last-child {
+		background: #f2f2f2;
+	}
+}
+
+
+.two_column {
+	overflow: hidden;
+
+	> div {
+		float: left;
+		width: 50%;
+		.box-sizing();
+	}
+}
+
+.three_column {
+	overflow: hidden;
+	> div {
+		float: left;
+		width: 33%;
+		.box-sizing();
+	}
+}
+
+.equation {
+	overflow: hidden;
+
+	> div {
+		float: left;
+		.box-sizing();
+	}
+	.statistic {
+		width: 24%;
+		padding: 4px;
+
+		&:last-child{
+			background: #f2f2f2;
+		}
+	}
+	.operator {
+		width: 14%;
+		font-size: 40px;
+		line-height: 100%;
+		text-align: center;
+	}
+}
