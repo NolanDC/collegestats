@@ -4,11 +4,6 @@ require 'json'
 input_file = 'trimmed_ipeds.csv'
 output_file = "ipeds.json"
 
-
-header_titles = %w(instname city state zip enrlm enrlw tuition03_tf ugentering total_full_time_undergraduates total_full_time_graduates applcn admssn satmt25 satmt75 satvr25 satvr75)
-pretty_titles = %w(name city state zip males females tuition entering undergrad grad applied admitted math25 math75 read25 read75)
-pretty_headers = Hash[header_titles.zip(pretty_titles)] 
-
 college_org = {
 	:instname => 'name',
 	:city => 'city',

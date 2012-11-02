@@ -10,7 +10,7 @@ view = {
 		$('#list').html(html)
 	},
 	showCollege: function(index) {
-		$('#list').fadeOut('fast', function() {
+		$('#results').fadeOut('fast', function() {
 			var context = Colleges.find( index )
 			var html = view.templates.college_statistics_template(context)
 			$('#college').html(html).fadeIn('fast')	
@@ -21,7 +21,7 @@ view = {
 	showSearchResults: function() {
 		$('#back').fadeOut()
 		$('#college').fadeOut('fast', function() {
-			$('#list').fadeIn()
+			$('#results').fadeIn()
 			view.$search_input.focus()
 		})
 	},

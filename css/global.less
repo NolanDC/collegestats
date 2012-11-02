@@ -85,36 +85,44 @@ body {
 	}
 }
 
-#list {
-	.college {
-		text-overflow: hidden;
-		white-space: nowrap;
-		width: 50%;
-		float: left;
-		cursor: pointer;
+#results {
+	#list {
+		overflow: hidden;
+		.college {
+			text-overflow: hidden;
+			white-space: nowrap;
+			width: 50%;
+			float: left;
+			cursor: pointer;
 
-		&:hover {
-			background: #f2f2f2;
-		}
-
-		.inner {
-			padding: 10px;
-			border-left: 6px solid transparent;
 			&:hover {
-				border-color: #999;
+				background: #f2f2f2;
 			}
-		}
-		.name {
-			color: #333;
-			text-overflow: ellipsis;
-			overflow: hidden;
-			font-weight: 500;
-		}
-		.location {
-			color: #555;
-			font-size: 14px;
-		}
-	}	
+
+			.inner {
+				padding: 10px;
+				border-left: 6px solid transparent;
+				&:hover {
+					border-color: #999;
+				}
+			}
+			.name {
+				color: #333;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				font-weight: 500;
+			}
+			.location {
+				color: #555;
+				font-size: 14px;
+			}
+		}	
+	}
+
+	#instructions {
+		padding: 10px 16px;
+		background: #f2f2f2;
+	}
 }
 
 #college {
